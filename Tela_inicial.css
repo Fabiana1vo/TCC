@@ -1,0 +1,595 @@
+.menu {
+  position: fixed;
+  display:flex;
+} // deixa o menu fixo
+
+
+.login{
+  margin-right:-10px;
+  margin-top:20px;
+  border-radius:20px;
+  margin-right:05px;
+  margin-left:-57px;
+
+}
+
+
+.ajuda{ 
+  margin:0px;
+  margin-right:05px;
+  margin-left:-57px;// deixa icone mais perto da palavra
+  margin-top:22px;
+  border-radius:20px;
+  font-size:18px;
+  font-family:sans-serif;
+  display:fixed;
+}
+
+////////////// OS ITENS ACIMA ALINHAM O MENU SUP DIR //////////////////////////////
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  // //isso ta mudando a fonte da página toda
+  padding: 0; 
+}
+///////////////////////////////// PARTE DOS SECTION SLIDE///////////////////////////
+html {
+  scroll-snap-type: y;
+}
+
+section {
+  scroll-snap-align: start;
+  min-block-size: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background:black;
+  color:white;
+
+}
+
+#Inicial {
+  //slide 1
+  //background: white;
+  background: url(https://images.unsplash.com/photo-1549638441-b787d2e11f14?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)  no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+
+  /////////////SETA BAR//////////////
+
+  .arrow-down{
+    width:60px;
+    height:40px;
+    margin:0 0 0 -30px;
+    position:absolute;
+    left:50%;
+    bottom:0px;
+    -webkit-animation: arrow 0.5s 1s infinite ease-out alternate;
+
+  }
+
+  .arrow-down:hover{
+    -webkit-animation-play-state: paused;
+  }
+
+  .left{
+    position:absolute;
+    height:10px;
+    width:40px;
+    background:black;
+    -webkit-transform:rotate(240deg);
+    top:10px;
+    left:10px;
+    -webkit-border-radius:4px;
+    -webkit-transform-origin:5px 50%;
+    -webkit-animation: leftArrow 0.5s 1s infinite ease-out alternate;
+  }
+
+  .right{
+    position:absolute;
+    height:10px;
+    width:40px;
+    background:black;
+    -webkit-transform:rotate(-60deg);
+    top:10px;
+    left:10px;
+    -webkit-border-radius:4px;
+    -webkit-transform-origin:5px 50%;
+    -webkit-animation: rightArrow 0.5s 1s infinite ease-out alternate;
+  }
+
+
+
+
+  @-webkit-keyframes arrow{
+    0% {
+      bottom:0px;
+    }
+    100%{
+      bottom:40px;
+    }
+  }
+
+
+  @-webkit-keyframes leftArrow{
+    0% {
+    }
+    100%{
+      -webkit-transform:rotate(225deg);
+    }
+  }
+
+  @-webkit-keyframes rightArrow{
+    0% {
+    }
+    100%{
+      -webkit-transform:rotate(-45deg);
+    }
+  }
+}
+#card{
+  ////////////////////////////////////SLIDE 2///////////////////////
+  background: rgb(231,231,231);
+  background: linear-gradient(0deg, rgba(231,231,231,1) 24%, rgba(222,222,222,1) 68%); 
+
+
+  body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background: #212121;
+    font-family: sans-serif;
+
+  }
+  .box{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+  }
+  .card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+  }
+  .card:before,
+  .card:after
+  {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index:-1;
+  }
+  .card:hover:before{
+    transform: rotate(25deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card:hover:after{
+    transform: rotate(15deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card .imgBx{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: #222;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  .card:hover .imgBx
+  {
+    bottom: 80px;
+  }
+
+  .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card .details{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .card .details h2{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #777;
+    text-transform: uppercase;
+  } 
+
+  .card .details h2 span{
+    font-weight: 500;
+    font-size: 16px;
+    color: #f38695;
+    display: block;
+    margin-top: 5px;
+  } 
+
+
+
+
+
+}
+
+
+#Reservas{ //SLIDE 3   
+
+  margin: 0;
+  top:-30px;
+  background: url(https://i.ibb.co/7QdH5Sd/933e8e92-1b87-45a8-9376-58e2af37f263.jpg)  no-repeat;   
+  //background:white;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  font-size:1rem; // da outra pagina
+
+
+
+  .w--halves{ //check-in/out
+    color:red;  
+    width: 5.7em;
+    float: left;
+
+  }
+
+
+  .destination{
+    margin-top:20px;
+    margin-left: 10%;
+    margin-right: auto;
+    font-size: 140%;
+
+    color:black;
+
+  }
+
+  .hotel_form {
+    position: relative;
+    width: 20rem;
+    padding: 1rem 0;
+    margin: 6rem auto;
+    font-family: 'Lato', sans-serif;
+    color: #e0e0e0;
+    //background:#a1c6c8; // COR DO FUNDO DO VIDRO
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);    
+    border-radius: 20px;
+    z-index: 1;    
+    background: inherit;
+
+
+  }
+
+  .hotel_form input {
+    border: 0;
+    border-radius: 0.25rem;
+  }
+
+  .w--whole { width:5rem }
+
+  .title {
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+    margin:  0 0 2rem;//margin top do encontre um quarto 
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: normal;
+    text-align: center;
+    color: black; //cor do "encontre um quarto"
+  }
+
+  .text_input { //elementos de dentro de "selecione um quarto"
+    margin-top:30px;
+    margin-left:1rem;
+    margin-bottom:40px;
+    display: block;
+    float: left;
+    height: 2rem;
+    width:26%;
+    // margin: 0 0 4rem 1rem;
+    padding: 0;
+    font-size: 1rem;
+    color: black;
+    -webkit-appearance: none;
+    border-radius:10px;
+    text-align: center;
+    background:#a1c6c8; // COR DO FUNDO DO VIDRO
+
+
+    ////////////////////////////////////////////////////
+
+
+
+
+
+
+  }
+
+  .text_input:hover,
+  .text_input:active,
+  .text_input:focus {
+    background: #EfF9Ff; //quando passo o mouse pra escolher quarto
+  }
+
+  .label { 
+    display:block;  
+    float: left;  
+    text-align: center;
+    margin: 0 0 0.9rem 2.6rem;
+    color:black; // cor das letras da tela (quartos...)
+    /*line-height: 1;  
+    text-align: center;
+    padding:11px;
+    margin:-20px 40px 7px 0px;*/
+  }
+
+
+
+  .calender {
+    text-align: center;
+    float: left;
+    margin: 0 0 3rem 2.5rem;
+    height: 6rem;
+    border-radius: 0.25rem;
+    overflow: hidden;// isso faz ficar oculto ate que eu use
+    width:30%;
+
+  }
+
+  .select {
+    width: calc(100% + 17px);
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    font-family: 'Lato', sans-serif;
+    text-indent: -3px;
+
+  }
+
+  .select > option {
+    color: black;
+    font-size: 1rem;
+    background: #fff; //cor do fundo quando seleciono as datas
+  }
+
+  .month {
+    height: 2rem;
+    font-size: 1rem;
+    color: black;
+    transition: 240ms ease-out;
+    background: #1565C0;
+
+  }
+
+  .month:hover,
+  .month:active,
+  .month:focus {
+    background: #1976D2;
+
+  }
+
+  .day {
+    height: 4rem;
+    font-size: 2rem;
+    color: #0D47A1;//cor dos números das datas
+    transition: 240ms ease-out;
+    background: #E3F2FD; //datas sem colocar o mouse em cima
+  }
+
+  .day:hover,
+  .day:active,
+  .day:focus {
+    background: #EfF9Ff;
+  }
+
+  .submit {
+    height: 3rem;
+    margin: 0 0 0 2rem;
+    color: #eee;
+    line-height: 1;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 240ms;
+    background: #ACABAB; // Cor do botão sem o hover
+    border-radius:10px;
+    font-family: 'Lato', sans-serif;
+    width:16rem;
+
+  }
+
+  .submit:hover {
+    background: #00d855;
+  }
+
+
+  @media only screen and (max-width: 420px), only screen and (max-device-width: 420px){}
+
+}
+
+
+
+#PAGINA4{
+  BACKGROUND:black;
+}
+
+#PAGINA5{
+  BACKGROUND:GREEN;
+}
+
+
+/////////////////////INICIO DA ALTERAÇÃO DA NAV//////////////
+nav {
+  margin-left: 15px;
+  width: 93%; // Faz com que a tela fique toda ocupada na horizntal
+  padding: 10px 30px;
+  justify-content: space-between; // deixa os icones do outro lado da tela 
+  display:flex;
+  z-index: 99;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  position: absolute; //tamanho de tela toda
+  font-weight: bold;
+  height:55px; //alinha o tamanho parte de baixo nav vidro
+
+}
+
+nav a {
+  color: black; // isso é a cor da fonte nav
+  text-decoration: none;
+  display:block;
+  //margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  padding:0 6px;
+  text-transform: uppercase;
+  transition: color .3s cubic-bezier(0.11, 0.7, 0, 1);
+  font-size: 0.872rem;
+  letter-spacing: .15rem;
+  line-height: 1.8;
+  display: flex;
+  margin: auto 20px auto 28px;//ajustando a nav com o "encontre um quarto"
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+/////////////////////////////////nav ///////////////////
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+//////////////////////essa parte deixa os itens da nav horizontal///////////////////
+nav li {
+  float: left;
+  list-style: none;
+  margin-top: 20px; // isso deixa os itens no meio da nav (center)
+  margin-left: -90px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+
+///////////////////////ANIMAÇÃO MEIO/////////////////////
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+//////parte que muda as letras que passam//////
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+//////parte que muda o quiet time//////
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
+
+.text {
+  position: absolute;
+  width: 450px;
+  left: 48.5%;
+  margin-left: -225px;
+  height: 40px;
+  margin-top: -20px;
+  color:black;// COR DO QUIET TIME
+  font-family:Oswald;//fonte das letras no geral
+  font-size: 44px; 
+  display:flex;
+}
+
+
+p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.word {
+  position: absolute;//altera a posição das letras
+  width: 240px;//o tanto de letra que aparece na tela
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+///////////////////////CORES O QUIET TIME//////////
+
+.wisteria {
+  color:  #DAA520;
+}
+
+.belize {
+  color: #B8860B;
+}
+
+.pomegranate {
+  color: #8b4513; 
+}
+
+.green {
+  color: #a0522d;
+
+}
+.midnight {
+  color: #d2691e;
+}
+
+
+
+
+///////////////////////////rodape////////////////////
+.Footer {
+  margin-top: -3.5%;
+  height: 90%;
+  width: 100%; // isso altera o tamanho da barra de vidro (baixo,direita)
+  background-color: #0404b4;
+  display: fixed;
+}
+
